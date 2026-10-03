@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #06080B;
+    --surface-dark: #0B0F15;
+    --surface-card: #101620;
+    --gold: #E5A62D;
+    --gold-bright: #F5BA41;
+    --gold-muted: rgba(229, 166, 45, 0.4);
+    --gold-border: rgba(229, 166, 45, 0.28);
+    --text-primary: #F5F5F7;
+    --text-secondary: #9FA7B3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080B10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252D3D;
+    border-radius: 4px;
+    border: 1px solid rgba(229, 166, 45, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E5A62D;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5BA41 45%, #C98616 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-subtle {
+    background: linear-gradient(180deg, #FDE68A 0%, #E5A62D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #F5BA41 0%, #E5A62D 50%, #C98616 100%);
+  }
+
+  .gold-border-glow {
+    border-color: rgba(229, 166, 45, 0.4);
+    box-shadow: 0 0 15px -3px rgba(229, 166, 45, 0.25);
+  }
+
+  .mythic-card {
+    background: linear-gradient(180deg, rgba(16, 22, 32, 0.85) 0%, rgba(9, 13, 19, 0.95) 100%);
+    border: 1px solid rgba(229, 166, 45, 0.22);
+    backdrop-filter: blur(12px);
+  }
+
+  .mythic-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mythic-card-hover:hover {
+    border-color: rgba(245, 186, 65, 0.55);
+    box-shadow: 0 0 25px -4px rgba(229, 166, 45, 0.35);
+    transform: translateY(-2px);
+  }
+}
+
+/* Ornate corner cuts and mythological border decoration */
+.frame-corner-tl {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid #E5A62D;
+  border-left: 2px solid #E5A62D;
+  pointer-events: none;
+}
+.frame-corner-tr {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid #E5A62D;
+  border-right: 2px solid #E5A62D;
+  pointer-events: none;
+}
+.frame-corner-bl {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid #E5A62D;
+  border-left: 2px solid #E5A62D;
+  pointer-events: none;
+}
+.frame-corner-br {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid #E5A62D;
+  border-right: 2px solid #E5A62D;
+  pointer-events: none;
+}
+
+/* Section scroll anchor clearance for fixed header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Horizontal slow drift marquee for supported games */
+@keyframes marqueeSlow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeSlow 40s linear infinite;
+}
+
+/* Horizontal smooth text slide-in utility */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.marquee-track:hover,
+.marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}
+

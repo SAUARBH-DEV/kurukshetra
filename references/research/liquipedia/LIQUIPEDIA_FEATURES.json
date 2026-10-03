@@ -1,0 +1,112 @@
+{
+  "source": "https://liquipedia.net/",
+  "analysis_type": "feature_audit",
+  "scope": "Publicly accessible product/functionality research; no UI or source-code cloning.",
+  "features": [
+    {
+      "id": "tournament-discovery",
+      "name": "Tournament discovery",
+      "category": "discovery",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "tournament-detail",
+      "name": "Tournament detail",
+      "category": "tournaments",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "tournament-stages",
+      "name": "Tournament stages",
+      "category": "tournaments",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "brackets-standings",
+      "name": "Brackets and standings",
+      "category": "competition",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "match-tracking",
+      "name": "Match tracking",
+      "category": "matches",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "team-profiles",
+      "name": "Team profiles",
+      "category": "teams",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1.5"
+    },
+    {
+      "id": "player-profiles",
+      "name": "Player profiles",
+      "category": "players",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1.5"
+    },
+    {
+      "id": "rankings",
+      "name": "Rankings",
+      "category": "leaderboards",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "statistics",
+      "name": "Competitive statistics",
+      "category": "analytics",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1.5"
+    },
+    {
+      "id": "search-filtering",
+      "name": "Search and filtering",
+      "category": "discovery",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1"
+    },
+    {
+      "id": "broadcasts",
+      "name": "Broadcast/stream information",
+      "category": "media",
+      "kurukshetra_relevance": "medium",
+      "recommended_phase": "v1.5"
+    },
+    {
+      "id": "tournament-series",
+      "name": "Tournament series",
+      "category": "competition",
+      "kurukshetra_relevance": "medium",
+      "recommended_phase": "later"
+    },
+    {
+      "id": "follows-notifications",
+      "name": "Following and notifications",
+      "category": "engagement",
+      "kurukshetra_relevance": "medium",
+      "recommended_phase": "post_v1"
+    },
+    {
+      "id": "calendar-export",
+      "name": "Calendar export",
+      "category": "schedule",
+      "kurukshetra_relevance": "medium",
+      "recommended_phase": "later"
+    },
+    {
+      "id": "achievements-history",
+      "name": "Achievements and competitive history",
+      "category": "identity",
+      "kurukshetra_relevance": "high",
+      "recommended_phase": "v1.5"
+    }
+  ]
+}
